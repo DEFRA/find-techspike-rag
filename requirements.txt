@@ -2,3 +2,6 @@ torch
 sentence-transformers
 haystack-ai
 datasets
+gradio
+openai
+pyyaml

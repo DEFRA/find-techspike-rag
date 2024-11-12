@@ -1,8 +1,10 @@
-# Project Name
+# RAG Spike (Modular Pipeline Testing)
 
 ## Overview
 
 This project implements a Retrieval-Augmented Generation (RAG) pipeline using Haystack and OpenAI models. It is designed to provide context-aware responses by retrieving relevant documents and generating answers based on the retrieved context and chat history.
+
+The pipeline is designed to be modular and easy to test with different configurations so we can compare different models and configurations.
 
 ## Features
 
@@ -19,16 +21,19 @@ This project implements a Retrieval-Augmented Generation (RAG) pipeline using Ha
    ```
 
 2. Set up environment variables:
-   - Create a `.env` file in the root directory.
-   - Add necessary environment variables, such as `OPENAI_API_KEY`.
+   
+   Create a `.env` file in the root directory with the following content:
+     ```
+     OPENAI_API_KEY=your_openai_api_key_here
+     ```
 
 ## Configuration
 
-- The configuration is managed via a `config.yaml` file. Key parameters include:
-  - `persist_path`: Path for ChromaDB persistence.
-  - `embedding_model`: Model used for generating embeddings.
-  - `top_k`: Number of top documents to retrieve.
-  - `template`: Template for prompt building.
+The configuration is managed via a `config.yaml` file. Key parameters include:
+- `persist_path`: Path for ChromaDB persistence.
+- `embedding_model`: Model used for generating embeddings.
+- `top_k`: Number of top documents to retrieve.
+- `template`: Template for prompt building.
 
 ## Usage
 
@@ -44,9 +49,9 @@ This project implements a Retrieval-Augmented Generation (RAG) pipeline using Ha
 
 3. Example usage:
    ```bash
-   python initiate_chat.py
+   python chat_commandline.py
    ```
-   - Ask a question and receive a response with source document names.
+   Ask a question and receive a response with source document names.
 
 ## Code Structure
 

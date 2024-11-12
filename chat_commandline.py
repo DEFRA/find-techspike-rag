@@ -1,4 +1,4 @@
-from initiate_chat import ChatSession
+from ChatSession import ChatSession
 import yaml
 
 # Load configuration from YAML file

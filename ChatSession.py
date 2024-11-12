@@ -105,9 +105,10 @@ class ChatSession:
 
 # Ensure no code runs on import
 if __name__ == "__main__":
+
     # Create ChatSession with config
     chat_session = ChatSession(config)
     
     # Example usage - ask a question and print response
-    response = chat_session.chat("What is the capital of France?")
+    response = chat_session.chat("Write a short description about the character Arya Stark")
     print(response)
