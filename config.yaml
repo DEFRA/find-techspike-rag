@@ -1,0 +1,5 @@
+# config.yaml
+persist_path: "got_chroma_db"
+dataset_name: "Tuana/game-of-thrones"
+dataset_split: "train"
+embedding_model: "text-embedding-3-small"

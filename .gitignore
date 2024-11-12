@@ -4,4 +4,7 @@
 .DS_Store
 .venv
 .ipynb_checkpoints
-/spike_notebooks/got_chroma_db/*
+*.bin
+*.sqlite3
+*.jsonl
+*.pickle
