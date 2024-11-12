@@ -1,3 +1,7 @@
 /data
 .env
 .gradio/*
+.DS_Store
+.venv
+.ipynb_checkpoints
+/spike_notebooks/got_chroma_db/*
