@@ -3,3 +3,21 @@ persist_path: "got_chroma_db"
 dataset_name: "Tuana/game-of-thrones"
 dataset_split: "train"
 embedding_model: "text-embedding-3-small"
+top_k: 3
+template: |
+  Answer the question based on the provided context and chat history. If you cannot find the answer in the context, say so.
+
+  Previous conversation:
+  {% for message in chat_history %}
+  {% if message.role == 'user' %}User: {{ message.content }}{% endif %}
+  {% if message.role == 'assistant' %}Assistant: {{ message.content }}{% endif %}
+  {% endfor %}
+
+  Context:
+  {% for doc in documents %}
+  {{ doc.content }}
+  {% endfor %}
+
+  Question: {{question}}
+
+  Answer:
