@@ -6,6 +6,7 @@ from haystack.dataclasses import ChatMessage, StreamingChunk
 from haystack_integrations.document_stores.chroma import ChromaDocumentStore
 from dotenv import load_dotenv
 import yaml
+import logging
 
 # Load environment variables
 load_dotenv()
@@ -13,6 +14,9 @@ load_dotenv()
 # Load configuration from YAML file
 with open("config.yaml", "r") as file:
     config = yaml.safe_load(file)
+
+# Set logging level
+logging.basicConfig(level=config["logging_level"])
 
 # Initialize components for the RAG pipeline:
 # - ChromaEmbeddingRetriever: Retrieves relevant documents from ChromaDB using embeddings
