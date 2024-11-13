@@ -106,7 +106,12 @@ class ChatSession:
         # # Return formatted response with sources on new lines
         # sources_text = "\n- ".join(sources)
         # return f"{answer}\n\nSources:\n- {sources_text}"
-        return f"{answer}\n\nSources: {', '.join(sources)}" #output the document names
+        return f"{answer}\n\nSources:\n - {', \n - '.join(sources)}" #output the document names
+
+    def reset(self):
+        """Reset the chat history and context history."""
+        self.chat_history = []
+        self.context_history = []
 
 # Ensure no code runs on import
 if __name__ == "__main__":

@@ -10,16 +10,30 @@ load_dotenv()
 with open("config.yaml", "r") as file:
     config = yaml.safe_load(file)
 
+# Create a global chat session
+chat_session = ChatSession(config)
+
 def chat_response(message, history):
-    chat_session = ChatSession(config)
     return chat_session.chat(message)
 
+def reset_chat():
+    chat_session.reset()
+    return None
+
 def main():
-    demo = gr.ChatInterface(
-        fn=chat_response,
-        title="Game of Thrones Chat",
-        description="Ask questions about Game of Thrones",
-    )
+    with gr.Blocks() as demo:
+        gr.Markdown("# Game of Thrones Chat")
+        gr.Markdown("Ask questions about Game of Thrones")
+        
+        chatbot = gr.ChatInterface(
+            fn=chat_response,
+            chatbot=gr.Chatbot(height=500),
+            textbox=gr.Textbox(scale=7, container=False, min_width=600),
+        )
+        
+        reset_btn = gr.Button("Reset Chat History")
+        reset_btn.click(fn=reset_chat, outputs=chatbot)
+    
     demo.launch(share=False)
 
 if __name__ == "__main__":
