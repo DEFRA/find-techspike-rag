@@ -5,3 +5,7 @@ datasets
 gradio
 openai
 pyyaml
+spacy #notebooks only
+nltk #notebooks only
+rake-nltk #notebooks only
+
