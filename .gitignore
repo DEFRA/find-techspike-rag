@@ -9,3 +9,6 @@
 *.jsonl
 *.pickle
 __pycache__
+/dbt_packages
+/.vscode
+*.duckdb
