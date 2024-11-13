@@ -103,9 +103,10 @@ class ChatSession:
         # Get unique source names
         sources = sorted(set(doc.meta['name'] for doc in self.context_history))
         
-        # Return formatted response with sources on new lines
-        sources_text = "\n- ".join(sources)
-        return f"{answer}\n\nSources:\n- {sources_text}"
+        # # Return formatted response with sources on new lines
+        # sources_text = "\n- ".join(sources)
+        # return f"{answer}\n\nSources:\n- {sources_text}"
+        return f"{answer}\n\nSources: {', '.join(sources)}" #output the document names
 
 # Ensure no code runs on import
 if __name__ == "__main__":
